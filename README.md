@@ -1,2 +1,6 @@
-# miva-cos106-portfolio
-Academic Portfolio and Management Website built with HTML, CSS, and JavaScript for COS 106 assessments.
+# Live Demo
+https://collins-studio.github.io/miva-cos106-portfolio/
+
+# Author
+Collins Studio
+Created for COS 106 coursework at MIVA Open University.
