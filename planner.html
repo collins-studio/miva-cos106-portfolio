@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Planner - Student Portfolio</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="planner.html">Planner</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+        <main class="planner-page">
+            <section>
+                <h1>Academic Planner</h1>
+            </section>
+
+            <section>
+                <form>
+                    <fieldset>
+                        <legend>Task Input</legend>
+                        <label for="task">TODO List: </label>
+                        <input type="text" id="task" name="task">
+                        <div class="planner-buttons">
+                            <button type="button">Add task</button>
+                            <button type="button">Clear task</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+
+            <section>
+                <h2>Task List</h2>
+                <ul id="task-list">
+                    <!--JavaScript will add task here-->
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2026 Redfield | COS 106 Lab Assessment</p>
+        </footer>
+    </body>
+</html>
