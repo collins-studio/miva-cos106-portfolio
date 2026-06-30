@@ -95,7 +95,7 @@ footer {
     padding: 1rem;
 }
 
-.projects-title {
+.projects h1 {
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -103,16 +103,25 @@ footer {
 .project-card {
     padding: 1rem;
     margin-bottom: 1.5rem;
-    border: 1px solid #ddd;
     border-radius: 10px;
     background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 .project-card img {
     width: 100%;
-    height: auto;
+    height: 200px;
     border-radius: 8px;
-    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+.project-card h2 {
+    margin-top: 1rem;
+}
+
+.project-card p {
+    margin-top: 0.5rem;
 }
 
 .project-card a {
@@ -280,6 +289,10 @@ button[type="submit"]:hover {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
+    }
+
+    .projects h1 {
+        grid-column: 1 / -1;
     }
 
     /*ABOUT PAGE*/
