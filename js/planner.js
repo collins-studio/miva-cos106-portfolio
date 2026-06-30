@@ -12,7 +12,39 @@ addButton.addEventListener("click", function () {
     }
 
     const li = document.createElement("li");
-    li.textContent = taskText;
+
+    const taskSpan = document.createElement("span");
+    taskSpan.textContent = taskText;
+
+    const completeButton = document.createElement("button");
+    completeButton.textContent = "Complete";
+
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+
+    const status = document.createElement("span");
+    status.textContent = "";
+
+    completeButton.addEventListener("click", function () {
+        taskSpan.classList.toggle("completed");
+
+        if (taskSpan.classList.contains("completed")) {
+            status.textContent = "Completed";
+            status.classList.add("status-completed");
+        } else {
+            status.textContent = "";
+        }
+    });
+
+    deleteButton.addEventListener("click", function () {
+        li.remove();
+    });
+
+    li.appendChild(taskSpan);
+    li.appendChild(completeButton);
+    li.appendChild(deleteButton);
+    li.appendChild(status);
+
     taskList.appendChild(li);
     taskInput.value = "";
 });
