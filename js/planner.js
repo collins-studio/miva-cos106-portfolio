@@ -3,6 +3,10 @@ const addButton = document.getElementById("add-btn");
 const clearButton = document.getElementById("clear-btn");
 const taskList = document.getElementById("task-list");
 
+function saveTask() {
+    localStorage.setItem("tasks", taskList.innerHTML);
+}
+
 addButton.addEventListener("click", function () {
     const taskText = taskInput.value.trim();
 
@@ -27,6 +31,7 @@ addButton.addEventListener("click", function () {
 
     completeButton.addEventListener("click", function () {
         taskSpan.classList.toggle("completed");
+        saveTask();
 
         if (taskSpan.classList.contains("completed")) {
             status.textContent = "Completed";
@@ -38,6 +43,7 @@ addButton.addEventListener("click", function () {
 
     deleteButton.addEventListener("click", function () {
         li.remove();
+        saveTask();
     });
 
     li.appendChild(taskSpan);
@@ -46,9 +52,18 @@ addButton.addEventListener("click", function () {
     li.appendChild(status);
 
     taskList.appendChild(li);
+    saveTask();
     taskInput.value = "";
 });
 
 clearButton.addEventListener("click", function () {
     taskInput.value = "";
+});
+
+window.addEventListener("load", function () {
+    const savedTasks = localStorage.getItem("tasks");
+
+    if (savedTasks) {
+        taskList.innerHTML = savedTasks;
+    }
 });
