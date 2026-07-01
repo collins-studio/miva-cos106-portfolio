@@ -7,28 +7,48 @@ contactForm.addEventListener("submit", function (event) {
     const phone = document.getElementById("contact-number").value.trim();
     const message = document.getElementById("message").value.trim();
 
-    if (
-        userName === "" ||
-        email === "" ||
-        phone === "" ||
-        message === ""
-    ) {
-        alert("All field are required.");
-        return;
+    document.getElementById("name-error").textContent = "";
+    document.getElementById("email-error").textContent = "";
+    document.getElementById("phone-error").textContent = "";
+    document.getElementById("message-error").textContent = "";
+    document.getElementById("success-message").textContent = "";
+
+    let isValid = true;
+
+    if (userName ==="") {
+        document.getElementById("name-error").textContent = "Name is required.";
+        isValid = false;
+    }
+    
+    if (email === "") {
+        document.getElementById("email-error").textContent = "Email is required.";
+        isValid = false;
+    } else {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            document.getElementById("email-error").textContent = "Please enter a valid email address";
+            isValid = false;
+        }
     }
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-        alert("Please enter a valid email address.");
-        return;
+    if (phone === "") {
+        document.getElementById("phone-error").textContent = "Phone number is required";
+        isValid = false;
+    } else {
+        const phonePattern = /^\d+$/;
+        if (!phonePattern.test(phone)) {
+            document.getElementById("phone-error").textContent = "Phone number must contain only digits";
+            isValid = false;
+        }
     }
 
-    const phonePattern = /^\d+$/;
-    if (!phonePattern.test(phone)) {
-        alert("Phone number must contain only digits.");
-        return;
+    if (message === "") {
+        document.getElementById("message-error").textContent = "Message is required";
+        isValid = false;
     }
 
-    alert("Message submitted successfully!");
-    contactForm.reset()
+    if (isValid) {
+        document.getElementById("success-message").textContent = "Message submitted successfully!";
+        contactForm.reset();
+    }
 });
