@@ -284,7 +284,7 @@ button[type="submit"]:hover {
 }
 
 .status-completed {
-    color: greenyellow;
+    color: green;
     font-weight: bold;
     margin-left: 0.5rem;
 }
