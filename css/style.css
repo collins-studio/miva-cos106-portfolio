@@ -32,26 +32,15 @@ p {
 nav {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-}
-
-nav a {
-    text-decoration: none;
-    color: #333;
-    padding: 0.75rem;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: bold;
-}
-
-nav a:hover {
-    background-color: #e9ecef;
 }
 
 .nav-links {
     display: none;
     flex-direction: column;
     width: 100%;
+    margin-top: 0.5rem;
+    background-color: #f8f9fa;
+    border-radius: 5px;
 }
 
 .nav-links a {
@@ -64,6 +53,17 @@ nav a:hover {
 
 .nav-links.show {
     display: flex;
+}
+
+.menu-btn {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    background: none;
+    border: 1px solid #999;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 50%;
+    align-self: center;
 }
 
 footer {
